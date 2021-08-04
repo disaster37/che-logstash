@@ -27,8 +27,7 @@ RUN \
     curl -o- -L https://github.com/rancher/cli/releases/download/${RANCHER_VERSION}/rancher-linux-amd64-${RANCHER_VERSION}.tar.gz | tar xvz -C /usr/local/bin --strip-components=2 &&\
     chmod +x /usr/local/bin/rancher &&\
     echo " Install buildkit for kubectl" &&\
-    curl -L  https://github.com/vmware-tanzu/buildkit-cli-for-kubectl/releases/download/v${BUILDKIT_VERSION}/kubectl-buildkit-${BUILDKIT_VERSION}-1.el7.x86_64.rpm -o /tmp/kubectl-buildkit.rpm &&\
-    rpm -i /tmp/kubectl-buildkit.rpm
+    rpm -i https://github.com/vmware-tanzu/buildkit-cli-for-kubectl/releases/download/v${BUILDKIT_VERSION}/kubectl-buildkit-${BUILDKIT_VERSION}-1.el7.x86_64.rpm
 
 # Tempory fix kubectl-buildkit
 COPY root/ /
@@ -39,6 +38,7 @@ RUN chmod +x /usr/bin/kubectl-*
 COPY root/ /
 RUN \
     rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch &&\
+    rpm -i https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
     microdnf install -y java-11-openjdk-headless logstash-${LOGSTASH_VERSION} diffutils yamllint python3 pylint
 
 
