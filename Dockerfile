@@ -38,7 +38,7 @@ RUN chmod +x /usr/bin/kubectl-*
 COPY root/ /
 RUN \
     rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch &&\
-    rpm -i https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+    rpm -i https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm &&\
     microdnf install -y java-11-openjdk-headless logstash-${LOGSTASH_VERSION} diffutils yamllint python3 pylint
 
 
