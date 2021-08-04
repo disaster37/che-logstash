@@ -5,6 +5,7 @@ ENV \
     HADOLINT_VERSION="v2.6.0" \
     LOGSTASH_VERSION="1:7.5.1-1" \
     LOGSTASH_FILTER_VERIFIER_VERSION="1.6.3" \
+    LS_JAVA_OPTS="-Dls.cgroup.cpuacct.path.override=/ -Dls.cgroup.cpu.path.override=/" \
     PATH=$PATH:/usr/share/logstash/bin
 
 
@@ -21,7 +22,7 @@ RUN \
 COPY root/ /
 RUN \
     rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch &&\
-    microdnf install -y java-11-openjdk-headless logstash-${LOGSTASH_VERSION}
+    microdnf install -y java-11-openjdk-headless logstash-${LOGSTASH_VERSION} diffutils
 
 
 
