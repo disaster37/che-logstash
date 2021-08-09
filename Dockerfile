@@ -40,7 +40,7 @@ RUN \
     rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch &&\
     rpm -i https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm &&\
     microdnf install -y java-11-openjdk-headless logstash-${LOGSTASH_VERSION} diffutils python3 &&\
-    pip3 install black yamllint
+    pip3 install black yamllint yamlfmt
 
 
 
