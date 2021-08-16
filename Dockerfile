@@ -4,6 +4,7 @@ FROM quay.io/webcenter/che-ubi:latest
 ENV \ 
     HADOLINT_VERSION="v2.6.0" \
     LOGSTASH_VERSION="1:7.5.1-1" \
+    FILEBEAT_VERSION="1:7.14.0-1" \
     LOGSTASH_FILTER_VERIFIER_VERSION="1.6.3" \
     KUBECTL_VERSION="v1.18.20" \
     RANCHER_VERSION="v2.4.6" \
@@ -39,7 +40,7 @@ COPY root/ /
 RUN \
     rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch &&\
     rpm -i https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm &&\
-    microdnf install -y java-11-openjdk-headless logstash-${LOGSTASH_VERSION} diffutils python3 findutils &&\
+    microdnf install -y java-11-openjdk-headless logstash-${LOGSTASH_VERSION} filebeat-${FILEBEAT_VERSION} diffutils python3 findutils &&\
     pip3 install black yamllint yamlfmt
 
 
