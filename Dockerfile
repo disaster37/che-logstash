@@ -4,7 +4,7 @@ FROM quay.io/webcenter/che-ubi:latest
 ENV \ 
     HADOLINT_VERSION="v2.6.0" \
     LOGSTASH_VERSION="1:7.5.1-1" \
-    FILEBEAT_VERSION="1:7.14.0-1" \
+    FILEBEAT_VERSION="7.14.0-1" \
     LOGSTASH_FILTER_VERIFIER_VERSION="1.6.3" \
     KUBECTL_VERSION="v1.18.20" \
     RANCHER_VERSION="v2.4.6" \
