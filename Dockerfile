@@ -8,7 +8,7 @@ ENV \
     LOGSTASH_FILTER_VERIFIER_VERSION="1.6.3" \
     KUBECTL_VERSION="v1.18.20" \
     RANCHER_VERSION="v2.4.6" \
-    BUILDKIT_VERSION="0.1.3" \
+    BUILDKIT_VERSION="0.1.4" \
     LS_JAVA_OPTS="-Dls.cgroup.cpuacct.path.override=/ -Dls.cgroup.cpu.path.override=/" \
     PATH=$PATH:/usr/share/logstash/bin
 
@@ -29,10 +29,6 @@ RUN \
     chmod +x /usr/local/bin/rancher &&\
     echo " Install buildkit for kubectl" &&\
     rpm -i https://github.com/vmware-tanzu/buildkit-cli-for-kubectl/releases/download/v${BUILDKIT_VERSION}/kubectl-buildkit-${BUILDKIT_VERSION}-1.el7.x86_64.rpm
-
-# Tempory fix kubectl-buildkit
-COPY root/ /
-RUN chmod +x /usr/bin/kubectl-*
 
 
 # Install Logstash and somme tools
