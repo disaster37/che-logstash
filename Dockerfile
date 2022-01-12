@@ -3,10 +3,10 @@ FROM quay.io/webcenter/che-ubi:latest
 
 ENV \ 
     HADOLINT_VERSION="v2.6.0" \
-    LOGSTASH_VERSION="1:7.5.1-1" \
-    FILEBEAT_VERSION="7.14.0-1" \
+    LOGSTASH_VERSION="1:7.16.2-1" \
+    FILEBEAT_VERSION="7.16.2-1" \
     LOGSTASH_FILTER_VERIFIER_VERSION="1.6.3" \
-    KUBECTL_VERSION="v1.18.20" \
+    KUBECTL_VERSION="v1.21.5" \
     RANCHER_VERSION="v2.4.6" \
     BUILDKIT_VERSION="0.1.4" \
     LS_JAVA_OPTS="-Dls.cgroup.cpuacct.path.override=/ -Dls.cgroup.cpu.path.override=/" \
