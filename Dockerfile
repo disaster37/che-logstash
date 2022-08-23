@@ -3,7 +3,7 @@ FROM quay.io/webcenter/che-ubi:latest
 
 ENV \ 
     HADOLINT_VERSION="v2.6.0" \
-    LOGSTASH_VERSION="1:7.16.2-1" \
+    LOGSTASH_VERSION="1:7.17.5-1" \
     FILEBEAT_VERSION="7.16.2-1" \
     LOGSTASH_FILTER_VERIFIER_VERSION="1.6.3" \
     KUBECTL_VERSION="v1.21.5" \
